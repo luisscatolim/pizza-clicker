@@ -9,7 +9,7 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 
 public class Main {
-    private static int contador = 0;
+    private static int numPizzas = 0;
 
     public static void main(String[] args) {
         JFrame window = new JFrame("Pizza Clicker"); // title of window
@@ -43,8 +43,8 @@ public class Main {
         pizza.setOpaque(false);
 
         pizza.addActionListener(e -> { // when click on pizza button
-            contador++; 
-            label.setText("Total: " + contador);
+            numPizzas++; 
+            label.setText("Total: " + numPizzas);
         });
 
         gbc.gridy = 1;
