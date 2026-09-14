@@ -9,12 +9,12 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 
 public class Main {
-    private static int numPizzas = 0;
+    private static int numPizzas = 0; // number of clicks/pizzas
 
     public static void main(String[] args) {
         JFrame window = new JFrame("Pizza Clicker"); // title of window
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close the program when close the window
-        window.setSize(400, 450); // set the size of window
+        window.setSize(500, 500); // set the size of window
         window.setLocationRelativeTo(null); // 
         window.setLayout(new GridBagLayout());
         window.setResizable(false);
@@ -24,9 +24,9 @@ public class Main {
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.CENTER; // set on center
 
-        JLabel label = new JLabel("Total: 0"); // create the text of points
-        label.setFont(new Font("Arial", Font.BOLD, 22)); // simple configs of text
-        window.add(label, gbc);
+        JLabel totalText = new JLabel("Total: 0"); // create the text of points
+        totalText.setFont(new Font("Arial", Font.BOLD, 22)); // simple configs of text
+        window.add(totalText, gbc);
 
         int largura = 250;
         int altura = 250;
@@ -43,8 +43,8 @@ public class Main {
         pizza.setOpaque(false);
 
         pizza.addActionListener(e -> { // when click on pizza button
-            numPizzas++; 
-            label.setText("Total: " + numPizzas);
+            numPizzas++; // add in num of pizzas
+            totalText.setText("Total: " + numPizzas); //update the text
         });
 
         gbc.gridy = 1;
